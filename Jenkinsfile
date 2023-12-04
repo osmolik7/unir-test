@@ -14,8 +14,8 @@ pipeline {
         }
         stage('Run App') {
             steps {
+                echo 'Corriendo la aplicacion!'
                 sh 'make run'
-                archiveArtifacts artifacts: 'results/*.xml'
             }
         }
         stage('Unit tests') {
