@@ -51,6 +51,31 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(0, self.calc.multiply(-1, 0))
         self.assertEqual(-2, self.calc.multiply(-1, 2))
 
+    def test_power_method_returns_correct_result(self):
+        self.assertEqual(4, self.calc.power(2, 2))
+        self.assertEqual(1, self.calc.power(5, 0))
+        self.assertEqual(1, self.calc.power(1, 10))
+        self.assertEqual(100, self.calc.power(10, 2))
+        self.assertEqual(0.25, self.calc.power(2, -2))
+        self.assertEqual(8, self.calc.power(2, 3))
+
+    def test_square_root_method_returns_correct_result(self):
+        self.assertEqual(2, self.calc.raiz_cuadrada(4))
+        self.assertEqual(3, self.calc.raiz_cuadrada(9))
+        self.assertEqual(0, self.calc.raiz_cuadrada(0))
+        
+    def test_square_root_method_fails_with_negative_number(self):
+        self.assertRaises(ValueError, self.calc.raiz_cuadrada, -4)
+
+    def test_logarithm_method_returns_correct_result(self):
+        self.assertEqual(0, self.calc.logaritmo_base_10(1))
+        self.assertEqual(1, self.calc.logaritmo_base_10(10))
+        self.assertEqual(2, self.calc.logaritmo_base_10(100))
+
+    def test_logarithm_method_fails_with_non_positive_number(self):
+        self.assertRaises(ValueError, self.calc.logaritmo_base_10, 0)
+        self.assertRaises(ValueError, self.calc.logaritmo_base_10, -10)
+
 
 if __name__ == "__main__":  # pragma: no cover
     unittest.main()
