@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Source') {
             steps {
-                git 'https://github.com/jeffersonricardherrera063/jenkins.git'
+                git 'https://github.com/osmolik7/unir-test.git'
             }
         }
         stage('Build') {
